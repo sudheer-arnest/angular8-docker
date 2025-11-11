@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular8learning'`, () => {
+  it(`should have as title 'angular8-docker'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular8learning');
+    expect(app.title).toEqual('angular8-docker');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular8learning app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angular8-docker app is running!');
   });
 });

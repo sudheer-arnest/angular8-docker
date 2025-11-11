@@ -1,0 +1,6 @@
+<div *ngIf="commentsData.length>0" class="postsContainer">
+<div *ngFor="let card of commentsData">
+    <app-postcard [cardData]="card" (clickedComment)="handleCommentClick($event)"
+        (clickedPost)="handlePostClick($event)"></app-postcard>
+</div>
+</div>

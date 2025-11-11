@@ -1,0 +1,13 @@
+<div class="mainContainer">
+  <h1 class="heading"> {{name}} </h1>
+  <button (click)="handleDogInfoClick()">{{dogInfoButtonText}}</button>
+  <button class="clikeMeButton" [routerLink]="['/todo']">Todo</button>
+  <button class="clikeMeButton" [routerLink]="['/posts']">View posts</button>
+  <button (click)="handleLoginClick()">Login</button>
+  <div *ngIf="dogsInfo.length > 0" class="dogSection">
+    <div *ngFor="let dog of dogsInfo" class="dogCard">
+      <h3 class="text-green-600">{{dog.attributes.name}}</h3>
+      <p class="dogDescription">{{dog.attributes.description}}</p>
+    </div>
+  </div>
+</div>

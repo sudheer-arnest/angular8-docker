@@ -1,0 +1,19 @@
+<div *ngIf="postsData.length>0" class="postsContainer">
+    <div *ngFor="let pos of postsData">
+        <app-postcard [cardData]="pos" (clickedComment)="handleCommentClick($event)"
+            (clickedPost)="handlePostClick($event)"></app-postcard>
+    </div>
+</div>
+
+<app-modal *ngIf="openCommentModal" (closeModal)="handleModalClose()">
+    <h1 modal-Title>Comments</h1>
+    <div modal-Body class="commentModalBody">
+        <div *ngFor="let comment of postComments" class="commentContainer">
+            <div class="commentHeader">
+                <p class="commentName">{{comment.name | slice:0:10}}</p>
+                <p class="commentEmail">{{comment.email}}</p>
+            </div>
+            <p class="commentEmail">{{comment.body}}</p>
+        </div>
+    </div>
+</app-modal>

@@ -1,0 +1,8 @@
+<div class="postContainer">
+    <h1>{{cardData.id}}</h1>
+    <div (click)="handlePostClick(cardData.id)">
+        <h1 class="postTitle">{{cardData.title}}</h1>
+        <p class="postBody">{{cardData.body}}</p>
+    </div>
+    <p class="viewCommentButton" (click)="handleCommentClick(cardData.id)">view Comments</p>
+</div>

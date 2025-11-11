@@ -1,0 +1,10 @@
+<div class="modelMainDiv">
+    <div class="modelContainer">
+        <div class="modalHeader">
+            <p></p>
+            <h1><ng-content select="[modal-Title]"></ng-content></h1>
+            <mat-icon (click)="handleCloseClick()" class="closeIcon">close</mat-icon>
+        </div>
+        <div><ng-content select="[modal-Body]"></ng-content></div>
+    </div>
+</div>

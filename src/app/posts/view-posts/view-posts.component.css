@@ -1,0 +1,27 @@
+.postsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.commentModalBody{
+    max-height: 300px;
+    overflow: scroll;
+}
+.commentName{
+    font-size: 12px;
+    font-weight: 700;
+}
+.commentContainer{
+    background-color: white;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.commentEmail{
+    font-size: 12px;
+}
+.commentHeader{
+    display: flex;
+    justify-content: space-between;
+}

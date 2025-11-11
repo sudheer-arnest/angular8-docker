@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  angular8-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: angular8-app
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app

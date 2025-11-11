@@ -1,0 +1,30 @@
+<div class="todoContainer">
+    <h1>My-Todo-List</h1>
+    <form [formGroup]="todoForm" (ngSubmit)="onAddOrEditTodo()" class="todoForm">
+        <div>
+            <input #todoInput placeholder="Enter Your Todo" formControlName="todo" />
+            <div *ngIf="todoForm.get('todo')?.errors?.noTodo && todoForm.get('todo')?.touched">
+                <p class="validationText">Min 3 chars and don't enter todo</p></div>
+        </div>
+        <div class="">
+            <app-search (searchChange)="handleSearch($event)" [message]="isEditing" ></app-search>
+        </div>
+        <button type="submit" class="addButton">{{isEditing?'Edit Todo':'Add todo'}}</button>
+    </form>
+    <div *ngIf="todos.length>0" class="todoItems">
+        <div *ngFor="let todo of searchItems">
+            <div class="todoItem">
+                <p [ngStyle]="{'text-decoration':todo.isCompleted?'line-through':'none'}"
+                    style="text-decoration: line-through;">{{todo.todo}}</p>
+                <div class="todoButtons">
+                    <button (click)="handleEdit(todo)"><mat-icon class="matIcon">edit</mat-icon> </button>
+                    <button (click)="handleTodoStatus(todo)"><mat-icon
+                            class="matIcon">{{!todo.isCompleted?'done':'close'}}</mat-icon> </button>
+                    <button (click)="handleDelete(todo.id)"><mat-icon class="matIcon">delete</mat-icon>
+                    </button>
+                    <p>{{todo.date|date}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
